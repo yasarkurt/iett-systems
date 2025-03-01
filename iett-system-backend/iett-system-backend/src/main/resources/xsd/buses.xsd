@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://tempuri.org/"
+           targetNamespace="http://tempuri.org/"
+           elementFormDefault="qualified">
+
+    <!-- GetLocation Request -->
+    <xs:element name="GetLocation">
+        <xs:complexType/>
+    </xs:element>
+
+    <!-- GetLocation Response -->
+    <xs:element name="GetLocationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="GetLocationResult" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Bus Data Type (for deserialization) -->
+    <xs:complexType name="BusData">
+        <xs:sequence>
+            <xs:element name="operator" type="xs:string"/>
+            <xs:element name="garage" type="xs:string"/>
+            <xs:element name="doorNumber" type="xs:string"/>
+            <xs:element name="time" type="xs:string"/>
+            <xs:element name="longitude" type="xs:double"/>
+            <xs:element name="latitude" type="xs:double"/>
+            <xs:element name="speed" type="xs:double"/>
+            <xs:element name="plateNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
