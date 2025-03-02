@@ -1,0 +1,39 @@
+.app-header {
+    padding: 10px;
+    background-color: #f8f9fa;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .logo-image {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .logo-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  /* Responsive tasarım için medya sorgusu */
+  @media (max-width: 600px) {
+    .logo-image {
+      height: 40px;
+    }
+  
+    .logo-title {
+      font-size: 1rem;
+    }
+  }

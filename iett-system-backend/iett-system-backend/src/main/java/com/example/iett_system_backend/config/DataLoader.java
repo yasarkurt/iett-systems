@@ -25,7 +25,7 @@ public class DataLoader {
     ) {
         return args -> {
             // Veritabanı boşsa dummy data ekle
-            if (busRepository.count() == 0 && garageRepository.count() == 0) {
+            if (busRepository.count() == 0 || garageRepository.count() == 0) {
                 loadDummyGarages(garageRepository);
                 loadDummyBuses(busRepository, garageRepository);
                 System.out.println("Dummy data başarıyla yüklendi!");
