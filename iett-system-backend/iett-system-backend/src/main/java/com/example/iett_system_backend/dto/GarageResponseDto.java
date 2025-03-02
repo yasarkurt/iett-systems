@@ -1,27 +1,16 @@
 package com.example.iett_system_backend.dto;
 
-public class GarageDTO {
+import java.time.LocalDateTime;
 
+public class GarageResponseDto {
     private Long id;
     private String garageId;
     private String garageName;
     private String garageCode;
-    private Double longitude;
     private Double latitude;
-
-    // Constructors
-    public GarageDTO() {
-    }
-
-    public GarageDTO(Long id, String garageId, String garageName, String garageCode,
-                     Double longitude, Double latitude) {
-        this.id = id;
-        this.garageId = garageId;
-        this.garageName = garageName;
-        this.garageCode = garageCode;
-        this.longitude = longitude;
-        this.latitude = latitude;
-    }
+    private Double longitude;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     // Getters and Setters
     public Long getId() {
@@ -56,6 +45,14 @@ public class GarageDTO {
         this.garageCode = garageCode;
     }
 
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
     public Double getLongitude() {
         return longitude;
     }
@@ -64,11 +61,19 @@ public class GarageDTO {
         this.longitude = longitude;
     }
 
-    public Double getLatitude() {
-        return latitude;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

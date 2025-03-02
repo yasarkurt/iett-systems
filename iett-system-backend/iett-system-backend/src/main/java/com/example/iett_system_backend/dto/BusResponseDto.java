@@ -2,9 +2,9 @@ package com.example.iett_system_backend.dto;
 
 import java.time.LocalDateTime;
 
-public class BusDTO {
-
+public class BusResponseDto {
     private Long id;
+    private String plateNumber;
     private String operator;
     private String garage;
     private String doorNumber;
@@ -12,26 +12,8 @@ public class BusDTO {
     private Double longitude;
     private Double latitude;
     private Double speed;
-    private String plateNumber;
-    private String nearestGarage; // For bonus task
-
-    // Constructors
-    public BusDTO() {
-    }
-
-    public BusDTO(Long id, String operator, String garage, String doorNumber,
-                  LocalDateTime time, Double longitude, Double latitude,
-                  Double speed, String plateNumber) {
-        this.id = id;
-        this.operator = operator;
-        this.garage = garage;
-        this.doorNumber = doorNumber;
-        this.time = time;
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.speed = speed;
-        this.plateNumber = plateNumber;
-    }
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     // Getters and Setters
     public Long getId() {
@@ -40,6 +22,14 @@ public class BusDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getPlateNumber() {
+        return plateNumber;
+    }
+
+    public void setPlateNumber(String plateNumber) {
+        this.plateNumber = plateNumber;
     }
 
     public String getOperator() {
@@ -98,19 +88,19 @@ public class BusDTO {
         this.speed = speed;
     }
 
-    public String getPlateNumber() {
-        return plateNumber;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setPlateNumber(String plateNumber) {
-        this.plateNumber = plateNumber;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public String getNearestGarage() {
-        return nearestGarage;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setNearestGarage(String nearestGarage) {
-        this.nearestGarage = nearestGarage;
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

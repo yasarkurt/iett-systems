@@ -1,15 +1,8 @@
-package com.example.iett_system_backend.model;
+package com.example.iett_system_backend.dto;
 
-import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "buses")
-public class Bus {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class BusRequestDto {
     private String plateNumber;
     private String operator;
     private String garage;
@@ -19,21 +12,7 @@ public class Bus {
     private Double latitude;
     private Double speed;
 
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
-
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-
     // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getPlateNumber() {
         return plateNumber;
     }
@@ -96,21 +75,5 @@ public class Bus {
 
     public void setSpeed(Double speed) {
         this.speed = speed;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }
