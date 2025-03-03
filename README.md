@@ -107,7 +107,7 @@ cd iett-systems
 
 2. Docker Compose ile tüm uygulamayı başlatın:
 
-docker-compose up -d
+docker-compose up --build
 
 3. Uygulama şu adreslerde çalışacaktır:
 - Frontend: http://localhost
