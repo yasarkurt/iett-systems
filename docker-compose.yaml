@@ -1,12 +1,11 @@
 version: '3.8'
 
 services:
-  # PostgreSQL Database
   postgres:
     image: postgres:14-alpine
     container_name: iett-postgres
     environment:
-      - POSTGRES_DB=iett_db
+      - POSTGRES_DB=           
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
@@ -22,7 +21,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # pgAdmin
   pgadmin:
     image: dpage/pgadmin4
     container_name: iett-pgadmin
@@ -36,6 +34,40 @@ services:
     networks:
       - iett-network
     restart: always
+
+  backend:
+    build:
+      context: ./iett-system-backend
+      dockerfile: Dockerfile
+    container_name: iett-backend
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/iett_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+    ports:
+      - "8081:8081"
+    networks:
+      - iett-network
+
+  frontend:
+    build:
+      context: ./iett-system-frontend
+      dockerfile: Dockerfile
+    container_name: iett-frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    networks:
+      - iett-network
+
 
 networks:
   iett-network:
