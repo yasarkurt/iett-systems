@@ -117,7 +117,7 @@ docker-compose up -d
 - PGAdmin: localhost:5050
 
 ## Project Structure
-
+```
 iett-systems/
 ├── docker-compose.yml
 │
@@ -152,6 +152,7 @@ iett-systems/
 ├── Dockerfile
 ├── nginx.conf
 └── package.json
+```
 
 ## Özellikler ve Kısıtlamalar
 
@@ -190,4 +191,4 @@ iett-systems/
 | PUT | /api/buses/{id} | Mevcut bir otobüsü günceller | id: Otobüs ID<br>Request Body: BusRequestDto |
 | DELETE | /api/buses/{id} | Bir otobüsü siler | id: Otobüs ID |
 
-Swagger UI ile tüm API'lerin detaylı dokümantasyonuna şu adresten erişebilirsiniz: http://localhost:8080/swagger-ui
+Swagger UI ile tüm API'lerin detaylı dokümantasyonuna şu adresten erişebilirsiniz: http://localhost:8081/swagger-ui
